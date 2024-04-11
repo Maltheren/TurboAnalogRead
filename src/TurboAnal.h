@@ -7,13 +7,12 @@
 namespace TurboAnal{
     extern uint16_t lastMeasurement;
     extern uint8_t flag;
-
-
+    extern void (*interruptFunction)();
     /*
     @brief registene op så der kan foretages en måling
     @param pin Den pin der måles analogt, automatisk
     */
-    void Setup(uint8_t pin);
+    void Setup(uint8_t pin, void (*ISRfunc)());
 
 
 
@@ -22,7 +21,7 @@ namespace TurboAnal{
     der skal køres en Measure() for at sparke den igang
     @param pin Den pin der måles analogt, automatisk
     */
-    void Setup_timer(uint8_t pin);
+    void Setup_timer(uint8_t pin, void (*ISRfunc)());
 
     /*
     foretager en måling
