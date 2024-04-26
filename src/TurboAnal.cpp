@@ -16,7 +16,7 @@ void (*TurboAnal::interruptFunction)() = NULL;
 
 void TurboAnal::Setup(uint8_t pin, void (*ISRFunc)()){
     
-    /*[TODO]:
+    /*[TODO]: DONE :))
     FIX så den kan starte på timer regs. side 220 ATMEGA328P. kan give gøre så funktionen kun skal bruge 0.7%
     */
     cli(); //gør vi ikke kan interruptes
@@ -47,6 +47,9 @@ void TurboAnal::Measure(){
 }
 
 ISR(ADC_vect){
+
+
+    
     //gør ingenting so far
     TurboAnal::lastMeasurement = ADC;
     TurboAnal::flag += 1;
