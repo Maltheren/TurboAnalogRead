@@ -47,10 +47,12 @@ void TurboAnal::Measure(){
 }
 
 ISR(ADC_vect){
-    //gør ingenting so far
+
     TurboAnal::lastMeasurement = ADC;
     TurboAnal::flag += 1;
+    
     if(TurboAnal::interruptFunction != NULL){
         (*TurboAnal::interruptFunction)(); //den funktion der skal kaldes.
     }
+ 
 }
