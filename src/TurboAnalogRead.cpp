@@ -1,4 +1,4 @@
-#include<TurboAnal.h>
+#include<TurboAnalogRead.h>
 uint16_t TurboAnal::lastMeasurement = 0;
 uint8_t TurboAnal::flag = 0;
 void (*TurboAnal::interruptFunction)() = NULL;
@@ -9,7 +9,7 @@ void (*TurboAnal::interruptFunction)() = NULL;
 //110 000 ns cpu sekunder med rigtig prescaler // vores er 78x så hurtig. eller den bruger 1.2% så mange cpu sekunder
 
 
-
+//fixed.
 
 //https://bytes.usc.edu/files/ee109/labs/lab5/ADC.pdf
 
